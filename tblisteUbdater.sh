@@ -13,6 +13,7 @@ if [[ "$cfisrt" == "0" && "$csecond" == "0" ]]; then
 	git add . --all
 	git commit -m "Version $(date)"
 	git push 
+	echo "The file is updated in local folder and written to github repo martingale/tbliste"
 else
 	echo "No new tbliste.zip file"
 fi
