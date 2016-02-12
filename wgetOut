@@ -1,7 +1,0 @@
---2016-02-12 09:20:12--  http://www.borsaistanbul.com/datum/tbliste.zip
-Resolving www.borsaistanbul.com (www.borsaistanbul.com)... 212.174.175.225, 212.174.168.225
-Connecting to www.borsaistanbul.com (www.borsaistanbul.com)|212.174.175.225|:80... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 1199887 (1.1M) [application/x-zip-compressed]
-Server file no newer than local file 'tbliste.zip' -- not retrieving.
-
