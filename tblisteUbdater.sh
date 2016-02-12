@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+cd /home/c1/hrn/tbliste
 wget --tries 2 -N -o wgetOut 'http://www.borsaistanbul.com/datum/tbliste.zip'
 cfirst="$(echo $?)"
 csecond="$(echo $(grep -c 'Server file no newer' wgetOut))"
@@ -13,9 +13,9 @@ if [[ "$cfisrt" == "0" && "$csecond" == "0" ]]; then
 	git add . --all
 	git commit -m "Version $(date)"
 	git push 
-	echo "The file is updated in local folder and written to github repo martingale/tbliste"
+	echo $(date) $':\tThe file is updated in local folder and written to github repo martingale/tbliste' >> log.out
 else
-	echo "No new tbliste.zip file"
+	echo $(date) $':\tNo new tbliste.zip file' >> log.out
 fi
 # read -r -d '' lastMd5 < <(cat lastMd5.txt)
 
