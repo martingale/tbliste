@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /home/c1/bondProject/tbliste
-wget --tries=5 --timeout=10 -N -o wgetOut http://www.borsaistanbul.com/datum/tbliste.zip
+wget --tries=2 --timeout=2 -N -o wgetOut http://www.borsaistanbul.com/datum/tbliste.zip
 cfirst="$(echo $?)"
 csecond="$(echo $(grep -c 'Server file no newer' wgetOut))"
  echo $cfirst $csecond
@@ -12,7 +12,8 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 	slep 1
 	sed -i 's/[^,]*,//' tbliste.csv	# delete 1st column.
 	sed -i '1d;4d' tbliste.csv # delete 1st and 4th rows.
-        cat tbliste.csv | egrep -i "^[A-Z0-9]{12,},,.*$" > tbliste.tmp # remove ayristirilabilir kupon things.
+        cat tbliste.csv | egrep -i "^[A-Z0-9]{12,},,.*$" > tbliste.tmp 
+	# remove ayristirilabilir kupon things.
 	mv ./tbliste.tmp ./tbliste.csv 
 	echo "tbliste.csv updated"
 	git add . --all
