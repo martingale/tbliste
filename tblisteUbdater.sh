@@ -7,13 +7,13 @@ csecond="$(echo $(grep -c 'Server file no newer' wgetOut))"
 if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 	unzip -o tbliste.zip -d ./
 ##  recentMd5=$(echo $(md5sum tbliste.xls) | grep -oEi '[[:alnum:]]{32}')
-	sleep 5
+	sleep 0
 	in2csv -f xls tbliste.xls > tbliste.csv
 	slep 1
 	sed -i 's/[^,]*,//' tbliste.csv	# delete 1st column.
 	sed -i '1d;4d' tbliste.csv # delete 1st and 4th rows.
         cat tbliste.csv | egrep -i "^[A-Z0-9]{12,},,.*$" > tbliste.tmp # remove ayristirilabilir kupon things.
-	mv tbliste.tmp tbliste.csv && rm tbliste.tmp
+	mv ./tbliste.tmp ./tbliste.csv 
 	echo "tbliste.csv updated"
 	git add . --all
 	git commit -m "Version $(date)"
