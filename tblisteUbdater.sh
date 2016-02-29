@@ -14,6 +14,7 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 #        cat tbliste.csv | egrep -i "^[A-Z0-9]{12,},,.*$" > tbliste.tmp 
 	# remove ayristirilabilir kupon things.
 #	mv ./tbliste.tmp ./tbliste.csv 
+	sed -i 's/,/;/g' tbliste.csv
 	echo "tbliste.csv updated"
 	git add . --all
 	git commit -m "Version $(date)"
