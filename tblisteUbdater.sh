@@ -16,7 +16,6 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 	# remove ayristirilabilir kupon things.
 #	mv ./tbliste.tmp ./tbliste.csv
 	sed -i 's/,/;/g' tbliste.csv
-	iconv -f 'utf-8' -t 'windows-1254' tbliste.csv -o tblisteAnsi.csv
 	echo "tbliste.csv updated"
 	git add . --all
 	git commit -m "Version $(date)"
