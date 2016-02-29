@@ -11,9 +11,9 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 	in2csv -f xls tbliste.xls > tbliste.csv
 	sed -i 's/[^,]*,//' tbliste.csv	# delete 1st column.
 	sed -i '1d;4d' tbliste.csv # delete 1st and 4th rows.
-        cat tbliste.csv | egrep -i "^[A-Z0-9]{12,},,.*$" > tbliste.tmp 
+#        cat tbliste.csv | egrep -i "^[A-Z0-9]{12,},,.*$" > tbliste.tmp 
 	# remove ayristirilabilir kupon things.
-	mv ./tbliste.tmp ./tbliste.csv 
+#	mv ./tbliste.tmp ./tbliste.csv 
 	echo "tbliste.csv updated"
 	git add . --all
 	git commit -m "Version $(date)"
