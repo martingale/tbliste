@@ -13,8 +13,9 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 	sed -i '1d;4d' tbliste.csv # delete 1st and 4th rows.
 #        cat tbliste.csv | egrep -i "^[A-Z0-9]{12,},,.*$" > tbliste.tmp 
 	# remove ayristirilabilir kupon things.
-#	mv ./tbliste.tmp ./tbliste.csv 
+#	mv ./tbliste.tmp ./tbliste.csv
 	sed -i 's/,/;/g' tbliste.csv
+	iconv -f 'utf-8' -t 'windows-1254' tbliste.csv -o tblisteAnsi.csv
 	echo "tbliste.csv updated"
 	git add . --all
 	git commit -m "Version $(date)"
