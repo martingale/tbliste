@@ -10,7 +10,6 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 	sleep 1
 	ssconvert -O 'separator=; locale=en_US.UTF-8' tbliste.xls tbliste.txt
 	mv tbliste.txt  tbliste.csv
-#	rm tbliste.txt
 #	libreoffice --headless --convert-to csv --outdir . *.xls
 #	in2csv -f xls tbliste.xls > tbliste.csv
 	sed -i 's/[^,]*,//' tbliste.csv	# delete 1st column.
