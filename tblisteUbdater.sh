@@ -20,7 +20,7 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 
 	for i in `seq 1 10`;
         do
-                sed -ri 's/([0-9][0-9])\/([0-9][0-9])\/([0-9][0-9][0-9][0-9])(.*)$/\2\.\1\.\3\4/g' tbliste.csv
+                sed -ri 's/([0-9][0-9][0-9][0-9])\/([0-9][0-9])\/([0-9][0-9])(.*)$/\3\.\2\.\1\4/g' tbliste.csv
         done    
 	echo "tbliste.csv updated"
 	git add . --all
