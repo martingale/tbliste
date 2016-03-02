@@ -7,10 +7,10 @@ csecond="$(echo $(grep -c 'Server file no newer' wgetOut))"
 if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 	unzip -o tbliste.zip -d ./
        ##  recentMd5=$(echo $(md5sum tbliste.xls) | grep -oEi '[[:alnum:]]{32}')
-	sleep 0
+	sleep 1
 	ssconvert -O 'separator=; locale=en_US.UTF-8' tbliste.xls tbliste.txt
 	mv tbliste.txt  tbliste.csv
-	rm tbliste.txt
+#	rm tbliste.txt
 #	libreoffice --headless --convert-to csv --outdir . *.xls
 #	in2csv -f xls tbliste.xls > tbliste.csv
 	sed -i 's/[^,]*,//' tbliste.csv	# delete 1st column.
