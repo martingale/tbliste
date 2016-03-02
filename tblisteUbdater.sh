@@ -8,7 +8,7 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 	unzip -o tbliste.zip -d ./
        ##  recentMd5=$(echo $(md5sum tbliste.xls) | grep -oEi '[[:alnum:]]{32}')
 	sleep 0
-	ssconvert -O 'separator=; locale=C' tbliste.xls tbliste.txt
+	ssconvert -O 'separator=; locale=en_US.UTF-8' tbliste.xls tbliste.txt
 	mv tbliste.txt  tbliste.csv
 	rm tbliste.txt
 #	libreoffice --headless --convert-to csv --outdir . *.xls
