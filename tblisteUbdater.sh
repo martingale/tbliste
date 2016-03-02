@@ -8,7 +8,8 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 	unzip -o tbliste.zip -d ./
        ##  recentMd5=$(echo $(md5sum tbliste.xls) | grep -oEi '[[:alnum:]]{32}')
 	sleep 0
-	libreoffice --headless --convert-to csv --outdir . *.xls
+	ssconvert tbliste.xls tbliste.csv
+#	libreoffice --headless --convert-to csv --outdir . *.xls
 #	in2csv -f xls tbliste.xls > tbliste.csv
 	sed -i 's/[^,]*,//' tbliste.csv	# delete 1st column.
 	sed -i '1d;4d' tbliste.csv # delete 1st and 4th rows.
