@@ -8,13 +8,13 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 	unzip -o tbliste.zip -d ./
        ##  recentMd5=$(echo $(md5sum tbliste.xls) | grep -oEi '[[:alnum:]]{32}')
 	sleep 0
-	ssconvert -O 'separator=; locale=en_US.UTF-8' tbliste.xls tbliste.txt
+	ssconvert -O 'eol=unix separator=;separator=; locale=en_US.UTF-8' tbliste.xls tbliste.txt
 	mv tbliste.txt  tbliste.csv
 #	libreoffice --headless --convert-to csv --outdir . *.xls
 #	in2csv -f xls tbliste.xls > tbliste.csv
 	sed -i 's/[^;]*;//' tbliste.csv	# delete 1st column.
 	sed -i '1d;4d' tbliste.csv # delete 1st and 4th rows.
-        sed -i '/^;;;/d' ./tbliste.csv # delete the wmpty csv lines ";;;;"
+        sed -i '/^;;;/d' ./tbliste.csv # delete the empty csv lines ";;;;"
 #        cat tbliste.csv | egrep -i "^[A-Z0-9]{12,},,.*$" > tbliste.tmp 
 	# remove ayristirilabilir kupon things.
 #	mv ./tbliste.tmp ./tbliste.csv
