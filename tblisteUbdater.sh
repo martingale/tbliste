@@ -24,8 +24,8 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
         do
                 sed -ri 's/([0-9][0-9][0-9][0-9])\/([0-9][0-9])\/([0-9][0-9])(.*)$/\3\.\2\.\1\4/g' tbliste.csv
         done   
-	grep  -E "[A-Z 0-9]{11}|^ISIN[[:space:]]+[CK]od" tbliste.csv > temp.csv # remove the lines occuring after excel alt+Enter oddies
-        mv temp.csv tbliste.csv
+	# grep  -E "[A-Z 0-9]{11}|^ISIN[[:space:]]+[CK]od" tbliste.csv > temp.csv # remove the lines occuring after excel alt+Enter oddies
+        # mv temp.csv tbliste.csv
 	iconv tbliste.csv -f UTF-8 -t WINDOWS-1254//TRANSLIT -o tbliste_WIN1254.csv # finally, convert the encosing 
 	echo "tbliste.csv updated"
 	git add . --all
