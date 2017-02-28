@@ -30,7 +30,7 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 	for i in $( cat dontUpdateISIN.txt); do
                 var=$(cat tbliste.csv | grep -n "$i" | grep -oEi "^[0-9]{1,3}")
 		if [ "$var" != "" ];then
-			sed -i '$var d;' tbliste.csv	
+			sed -i "$var d;" tbliste.csv	
 		fi
         done
 # End of remove the exceptional ##
