@@ -36,7 +36,7 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 # End of remove the exceptional ##
 	iconv tbliste.csv -f UTF-8 -t WINDOWS-1254//TRANSLIT -o tbliste_WIN1254.csv # finally, convert the encosing 
 	echo "tbliste.csv updated"
-	cut -d ";" -f 1-29 < tbliste_WIN1254.csv > foo.csv &&  mv foo.csv tbliste_WIN1254.csv # remove the columns after 29th column (@ 2017-02-28)
+	cut -d ";" -f 1-30 < tbliste_WIN1254.csv > foo.csv &&  mv foo.csv tbliste_WIN1254.csv # remove the columns after 30th column (@ 2017-03-01)
 	git add . --all
 	git commit -m "Version $(date)"
 	git push 
