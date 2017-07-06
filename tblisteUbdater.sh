@@ -33,6 +33,7 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 			sed -i "$var d;" tbliste.csv	
 		fi
         done
+	sed -i '1 s/^.*$/ISIN kodu;;/' tbliste.csv
 # End of remove the exceptional ##
 	iconv tbliste.csv -f UTF-8 -t WINDOWS-1254//TRANSLIT -o tbliste_WIN1254.csv # finally, convert the encosing 
 	echo "tbliste.csv updated"
