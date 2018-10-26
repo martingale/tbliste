@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/c1/bondProject/tbliste
+cd /home/c2/bondProject/tbliste
 wget --tries=2 --timeout=5 -N -o wgetOut http://www.borsaistanbul.com/datum/tbliste.zip
 cfirst="$(echo $?)"
 csecond="$(echo $(grep -c 'Server file no newer' wgetOut))"
