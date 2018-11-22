@@ -16,7 +16,7 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
         echo 'Deleting first column'
 	sed -i 's/[^,]*,//' tbliste.csv	# delete 1st column.
         echo 'Deleting first row'
-	sed -i '1d,' tbliste.csv # delete 1st row.
+	sed -i '1d;' tbliste.csv # delete 1st row.
         echo 'Deleting empty lines'
         sed -i '/^;;;/d' ./tbliste.csv # delete the empty csv lines ";;;;"
 #        cat tbliste.csv | egrep -i "^[A-Z0-9]{12,},,.*$" > tbliste.tmp 
