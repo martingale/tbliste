@@ -14,8 +14,8 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 #	libreoffice --headless --convert-to csv --outdir . *.xls
 #	in2csv -f xls tbliste.xls > tbliste.csv
 	sed -i 's/[^;]*;//' tbliste.csv	# delete 1st column.
-	sed -i '1d;' tbliste.csv # delete 1st row.
-	sed -i '1d;' tbliste.csv # delete 1st row.
+	#sed -i '1d;' tbliste.csv # delete 1st row.
+	#sed -i '1d;' tbliste.csv # delete 1st row.
         sed -i '/^;;;/d' ./tbliste.csv # delete the empty csv lines ";;;;"
 #        cat tbliste.csv | egrep -i "^[A-Z0-9]{12,},,.*$" > tbliste.tmp 
 	# remove ayristirilabilir kupon things.
