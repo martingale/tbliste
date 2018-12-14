@@ -6,10 +6,10 @@ csecond="$(echo $(grep -c 'Server file no newer' wgetOut))"
  echo $cfirst $csecond
 if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 	unzip -o tbliste.zip -d ./
-       ##  recentMd5=$(echo $(md5sum tbliste.xls) | grep -oEi '[[:alnum:]]{32}')
+#       ##  recentMd5=$(echo $(md5sum tbliste.xls) | grep -oEi '[[:alnum:]]{32}')
 	sleep 0
-	#ssconvert -O 'separator=; locale=en_US.UTF-8' tbliste.xls tbliste.txt
-        #convertxls2csv -x tbliste.xls -b WINDOWS-1254 -c tbliste.txt -n 1 -a UTF-8
+#	#ssconvert -O 'separator=; locale=en_US.UTF-8' tbliste.xls tbliste.txt
+#        #convertxls2csv -x tbliste.xls -b WINDOWS-1254 -c tbliste.txt -n 1 -a UTF-8
         ./xls2csv.py tbliste.xls tbliste.txt
 	mv tbliste.txt  tbliste.csv
 #	libreoffice --headless --convert-to csv --outdir . *.xls
