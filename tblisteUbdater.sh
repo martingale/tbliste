@@ -10,8 +10,8 @@ if [ $csecond -eq 0 ] && [ $cfirst -eq 0 ]; then
 	sleep 0
 #	#ssconvert -O 'separator=; locale=en_US.UTF-8' tbliste.xls tbliste.txt
 #        #convertxls2csv -x tbliste.xls -b WINDOWS-1254 -c tbliste.txt -n 1 -a UTF-8
-        ./xls2csv.py tbliste.xls tbliste.txt
-	mv tbliste.txt  tbliste.csv
+        ./xls2csv.py tbliste.xls tbliste.csv
+#	mv tbliste.txt  tbliste.csv
 #	libreoffice --headless --convert-to csv --outdir . *.xls
 #	in2csv -f xls tbliste.xls > tbliste.csv
 	sed -i '1d;' tbliste.csv # delete 1st row.
